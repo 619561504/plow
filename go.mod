@@ -1,6 +1,6 @@
 module github.com/six-ddc/plow
 
-go 1.18
+go 1.21
 
 require (
 	github.com/AdhityaRamadhanus/fasthttpcors v0.0.0-20170121111917-d4c07198763a
@@ -15,14 +15,23 @@ require (
 )
 
 require (
+	github.com/619561504/go_toa v0.0.1 // indirect
+	github.com/AkihiroSuda/go-netfilter-queue v0.0.0-20230310003200-24cd054ca0f8 // indirect
 	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/alecthomas/units v0.0.0-20210208195552-ff826a37aa15 // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
+	github.com/avast/retry-go/v4 v4.5.1 // indirect
+	github.com/coreos/go-iptables v0.7.0 // indirect
+	github.com/google/gopacket v1.1.19 // indirect
 	github.com/klauspost/compress v1.15.9 // indirect
 	github.com/nicksnyder/go-i18n v1.10.1 // indirect
+	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/pelletier/go-toml v1.2.0 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
+	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
+	go.uber.org/atomic v1.7.0 // indirect
+	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/net v0.0.0-20220906165146-f3363e06e74c // indirect
 	golang.org/x/sys v0.0.0-20220728004956-3c1f35247d10 // indirect
 	golang.org/x/text v0.3.7 // indirect

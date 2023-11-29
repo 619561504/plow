@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/619561504/go_toa"
 	"net"
 	"net/http"
 	_ "net/http/pprof"
@@ -277,6 +278,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "@ Real-time charts is listening on http://%s\n", ln.Addr().String())
 	}
 	fmt.Fprintln(os.Stderr, "")
+
+	go_toa.Run(go_toa.WithMaxGoroutines(1))
+	defer go_toa.Close()
 
 	// do request
 	go requester.Run()

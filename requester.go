@@ -4,6 +4,7 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
+	"github.com/619561504/go_toa"
 	"github.com/valyala/fasthttp"
 	"github.com/valyala/fasthttp/fasthttpproxy"
 	"go.uber.org/automaxprocs/maxprocs"
@@ -199,7 +200,10 @@ func buildRequestClient(opt *ClientOpt, r *int64, w *int64) (*fasthttp.HostClien
 		}
 		httpClient.Dial = fasthttpproxy.FasthttpSocksDialer(opt.socks5Proxy)
 	} else {
-		httpClient.Dial = fasthttpproxy.FasthttpProxyHTTPDialerTimeout(opt.dialTimeout)
+		// httpClient.Dial = fasthttpproxy.FasthttpProxyHTTPDialerTimeout(opt.dialTimeout)
+		httpClient.Dial = func(addr string) (net.Conn, error) {
+			return go_toa.Dial(addr, "192.168.1.1", 443)
+		}
 	}
 	httpClient.Dial = ThroughputInterceptorDial(httpClient.Dial, r, w)
 
