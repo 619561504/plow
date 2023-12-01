@@ -7,6 +7,7 @@ import (
 	"net/http"
 	_ "net/http/pprof"
 	"os"
+	"runtime"
 	"strconv"
 	"strings"
 	"time"
@@ -279,7 +280,7 @@ func main() {
 	}
 	fmt.Fprintln(os.Stderr, "")
 
-	go_toa.Run(go_toa.WithMaxGoroutines(1))
+	go_toa.Run(go_toa.WithMaxGoroutines(runtime.NumCPU()))
 	defer go_toa.Close()
 
 	// do request
